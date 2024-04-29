@@ -4,6 +4,7 @@ from main import gpt, db, bot
 @bot.message_handler(commands=['start'])
 def start(message):
     user_id = message.chat.id
+    db.make_new_user(user_id, 'user')
     bot.send_message(user_id, 'start')
 
 

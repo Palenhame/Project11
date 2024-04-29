@@ -3,3 +3,27 @@
 2024-04-29 10:07:46,290 - TeleBot - ERROR - Break infinity polling
 2024-04-29 10:14:04,017 - TeleBot - ERROR - Infinity polling: polling exited
 2024-04-29 10:14:04,017 - TeleBot - ERROR - Break infinity polling
+2024-04-29 10:14:32,022 - TeleBot - ERROR - Infinity polling exception: TeleBot.register_next_step_handler() missing 1 required positional argument: 'callback'
+2024-04-29 10:14:32,023 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 8404, in _run_middlewares_and_handler
+    result = handler['function'](message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 14, in for_text
+    bot.register_next_step_handler(message, )
+TypeError: TeleBot.register_next_step_handler() missing 1 required positional argument: 'callback'
+
+2024-04-29 10:16:06,451 - TeleBot - ERROR - Infinity polling: polling exited
+2024-04-29 10:16:06,451 - TeleBot - ERROR - Break infinity polling
