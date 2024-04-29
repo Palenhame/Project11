@@ -181,7 +181,7 @@ class DB:
             new_id = 1
         return new_id
 
-    def make_new_user(self, user_id: int, roles: str, ) -> None:
+    def make_new_user(self, user_id: int, roles: str) -> None:
         new_id = self._last_user_id()
 
         sql_query = f"""
@@ -198,7 +198,7 @@ class DB:
 if __name__ == '__main__':
     db = DB('sqlite3', 'users')
     db.make_new_user(11, 'user')
-    # data = db.select_data(11)
+    data = db.select_data(11)
     # print(data)
     # db.update_data(data[0].id, 'character', 'lox')
     # data = db.select_data(11)
