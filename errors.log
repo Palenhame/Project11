@@ -288,3 +288,877 @@ Traceback (most recent call last):
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924450&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001ABEB3B0C50>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
 
+2024-05-01 15:32:21,964 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 15:32:21,964 - TeleBot - ERROR - Break infinity polling
+2024-05-01 15:51:43,491 - TeleBot - ERROR - Infinity polling exception: unsupported operand type(s) for +: 'NoneType' and 'str'
+2024-05-01 15:51:43,496 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 49, in text_into_db
+    db.update_data(data.id, 'message', data.message + text)
+                                       ~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+2024-05-01 15:52:39,046 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 15:52:39,046 - TeleBot - ERROR - Break infinity polling
+2024-05-01 15:54:13,833 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 15:54:13,833 - TeleBot - ERROR - Break infinity polling
+2024-05-01 15:54:24,709 - TeleBot - ERROR - Infinity polling exception: 'NoneType' object has no attribute 'id'
+2024-05-01 15:54:24,711 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 49, in text_into_db
+    db.update_data(data.id, 'message', data.message + text if data.message else text)
+                   ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'id'
+
+2024-05-01 15:55:00,141 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 15:55:00,141 - TeleBot - ERROR - Break infinity polling
+2024-05-01 15:55:12,114 - TeleBot - ERROR - Infinity polling exception: 'NoneType' object has no attribute 'message'
+2024-05-01 15:55:12,117 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 49, in text_into_db
+    db.update_data(data.id, 'message', assistant_data.message + text if assistant_data.message else text)
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'message'
+
+2024-05-01 15:55:41,546 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 15:55:41,546 - TeleBot - ERROR - Break infinity polling
+2024-05-01 15:55:47,307 - TeleBot - ERROR - Infinity polling exception: Answer.__new__() missing 1 required positional argument: 'id'
+2024-05-01 15:55:47,309 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 45, in text_into_db
+    data = return_data_from_db(db.select_data(user_id), 'user')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 60, in return_data_from_db
+    user_data = Answer()
+                ^^^^^^^^
+TypeError: Answer.__new__() missing 1 required positional argument: 'id'
+
+2024-05-01 15:56:05,349 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 15:56:05,349 - TeleBot - ERROR - Break infinity polling
+2024-05-01 15:57:52,109 - config - ERROR - Ошибка: database is locked
+2024-05-01 15:59:20,954 - config - ERROR - Ошибка: database is locked
+2024-05-01 15:59:37,365 - config - ERROR - Ошибка: UNIQUE constraint failed: users.id
+2024-05-01 15:59:37,366 - TeleBot - ERROR - Infinity polling exception: Ошибка: UNIQUE constraint failed: users.id
+2024-05-01 15:59:37,369 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 116, in __connect_to_db
+    cur.execute(query)
+sqlite3.IntegrityError: UNIQUE constraint failed: users.id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 44, in text_into_db
+    db.make_new_user(user_id, 'user')
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 191, in make_new_user
+    self.__connect_to_db(sql_query)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 120, in __connect_to_db
+    raise DB_Error(self.db_error + str(error))
+error.DB_Error: Ошибка: UNIQUE constraint failed: users.id
+
+2024-05-01 16:13:00,915 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 16:13:00,915 - TeleBot - ERROR - Break infinity polling
+2024-05-01 16:14:54,131 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 16:14:54,131 - TeleBot - ERROR - Break infinity polling
+2024-05-01 16:15:45,271 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 16:15:45,271 - TeleBot - ERROR - Break infinity polling
+2024-05-01 17:33:48,234 - TeleBot - ERROR - Infinity polling exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2024-05-01 17:33:48,237 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1423, in getresponse
+    response.begin()
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1423, in getresponse
+    response.begin()
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1205, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 675, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 647, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 327, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 161, in _make_request
+    result = _get_req_session().request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2024-05-01 19:43:38,110 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:43:38,111 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:43:46,776 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:43:46,776 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:43:47,996 - config - ERROR - Не существующий пользователь.
+2024-05-01 19:44:28,887 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:44:28,887 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:44:35,368 - config - ERROR - Ошибка: database is locked
+2024-05-01 19:45:52,297 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:45:52,297 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:45:58,991 - config - ERROR - Ошибка: database is locked
+2024-05-01 19:46:54,780 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:46:54,780 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:47:01,284 - config - ERROR - Ошибка: database is locked
+2024-05-01 19:47:56,682 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:47:56,682 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:48:35,727 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:48:35,727 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:48:41,937 - config - ERROR - Не существующий пользователь.
+2024-05-01 19:48:41,939 - TeleBot - ERROR - Infinity polling exception: Не существующий пользователь.
+2024-05-01 19:48:41,944 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text, 100)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 44, in text_into_db
+    data = return_data_from_db(db.select_data(user_id), 'user')
+                               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 143, in select_data
+    raise NonExistingUser(self.non_existing_user)
+error.NonExistingUser: Не существующий пользователь.
+
+2024-05-01 19:52:51,914 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:52:51,914 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:52:53,090 - config - ERROR - Не существующий пользователь.
+2024-05-01 19:54:03,030 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:54:03,030 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:54:03,995 - config - ERROR - Не существующий пользователь.
+2024-05-01 19:54:04,100 - config - ERROR - Не существующий пользователь.
+2024-05-01 19:54:07,597 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:54:07,597 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:54:08,051 - TeleBot - ERROR - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2024-05-01 19:54:08,052 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1205, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 675, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 647, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 327, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 167, in _make_request
+    json_result = _check_result(method_name, result)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 194, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2024-05-01 19:54:12,183 - config - ERROR - Не существующий пользователь.
+2024-05-01 19:56:10,512 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:56:10,512 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:56:17,278 - config - ERROR - Ошибка: database is locked
+2024-05-01 19:56:26,046 - config - ERROR - Не существующий пользователь.
+2024-05-01 19:56:27,393 - TeleBot - ERROR - Infinity polling exception: can't set attribute
+2024-05-01 19:56:27,396 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text, 100)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 47, in text_into_db
+    data.id = data.id + 1
+    ^^^^^^^
+AttributeError: can't set attribute
+
+2024-05-01 19:57:34,003 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 19:57:34,003 - TeleBot - ERROR - Break infinity polling
+2024-05-01 19:57:43,900 - config - ERROR - Не существующий пользователь.
+2024-05-01 19:57:45,370 - TeleBot - ERROR - Infinity polling exception: 'list' object has no attribute 'id'
+2024-05-01 19:57:45,373 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text, 100)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 48, in text_into_db
+    data.id = data.id + 1
+              ^^^^^^^
+AttributeError: 'list' object has no attribute 'id'
+
+2024-05-01 20:00:35,118 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 20:00:35,118 - TeleBot - ERROR - Break infinity polling
+2024-05-01 20:00:42,383 - config - ERROR - Не существующий пользователь.
+2024-05-01 20:02:12,196 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 20:02:12,196 - TeleBot - ERROR - Break infinity polling
+2024-05-01 20:02:18,713 - config - ERROR - Ошибка: database is locked
+2024-05-01 20:02:28,555 - config - ERROR - Не существующий пользователь.
+2024-05-01 20:03:17,052 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 20:03:17,052 - TeleBot - ERROR - Break infinity polling
+2024-05-01 20:03:28,223 - config - ERROR - Не существующий пользователь.
+2024-05-01 20:03:59,685 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-01 20:03:59,685 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:34:17,709 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:35:06,764 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:35:06,764 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:35:13,378 - config - ERROR - Ошибка: database is locked
+2024-05-02 16:35:23,224 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:37:30,852 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:37:30,852 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:37:46,525 - config - ERROR - Ошибка: database is locked
+2024-05-02 16:38:03,399 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:38:03,399 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:38:03,409 - config - ERROR - Ошибка: UNIQUE constraint failed: users.id
+2024-05-02 16:38:03,412 - TeleBot - ERROR - Infinity polling exception: Ошибка: UNIQUE constraint failed: users.id
+2024-05-02 16:38:03,415 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 45, in text_into_db
+    data = return_data_from_db(db.select_data(user_id), 'user')
+                               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 143, in select_data
+    raise NonExistingUser(self.non_existing_user)
+error.NonExistingUser: Не существующий пользователь.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 116, in __connect_to_db
+    cur.execute(query)
+sqlite3.IntegrityError: UNIQUE constraint failed: users.id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text, 100)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 49, in text_into_db
+    db.make_new_user(user_id, 'user')
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 191, in make_new_user
+    self.__connect_to_db(sql_query)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 120, in __connect_to_db
+    raise DB_Error(self.db_error + str(error))
+error.DB_Error: Ошибка: UNIQUE constraint failed: users.id
+
+2024-05-02 16:39:27,087 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:39:27,087 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:39:42,676 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:41:04,097 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:41:04,097 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:41:15,117 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:41:15,146 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:41:15,147 - TeleBot - ERROR - Infinity polling exception: Не существующий пользователь.
+2024-05-02 16:41:15,150 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text, 100)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 58, in text_into_db
+    db.update_data(data.id + 2, 'message', f'{assistant_data.message} {text}' if assistant_data.message else text)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 85, in update_data
+    raise NonExistingUser(self.non_existing_user)
+error.NonExistingUser: Не существующий пользователь.
+
+2024-05-02 16:41:21,157 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:41:21,157 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:41:29,514 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:41:29,543 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:41:29,545 - TeleBot - ERROR - Infinity polling exception: Не существующий пользователь.
+2024-05-02 16:41:29,548 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text, 100)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 58, in text_into_db
+    db.update_data(data.id + 2, 'message', f'{assistant_data.message} {text}' if assistant_data.message else text)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 85, in update_data
+    raise NonExistingUser(self.non_existing_user)
+error.NonExistingUser: Не существующий пользователь.
+
+2024-05-02 16:42:45,373 - config - ERROR - Ошибка: database is locked
+2024-05-02 16:42:59,159 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:42:59,188 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:42:59,190 - TeleBot - ERROR - Infinity polling exception: Не существующий пользователь.
+2024-05-02 16:42:59,192 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1206, in __threaded_polling
+    self.worker_pool.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 150, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 24, in text
+    text_into_db(user_id, message.text, 100)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\bot.py", line 59, in text_into_db
+    db.update_data(data.id + 2, 'message', f'{assistant_data.message} {text}' if assistant_data.message else text)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\DB.py", line 85, in update_data
+    raise NonExistingUser(self.non_existing_user)
+error.NonExistingUser: Не существующий пользователь.
+
+2024-05-02 16:44:14,751 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:44:14,751 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:44:24,284 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:51:21,583 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:51:21,583 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:51:28,117 - config - ERROR - Ошибка: database is locked
+2024-05-02 16:51:39,050 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:51:39,784 - config - ERROR - Статус код: 400
+2024-05-02 16:52:14,137 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:52:14,137 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:52:26,689 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:52:27,363 - config - ERROR - Статус код: 400
+2024-05-02 16:53:29,849 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:53:29,849 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:53:37,109 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:53:37,731 - config - ERROR - Статус код: 400
+2024-05-02 16:54:17,195 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 16:54:17,195 - TeleBot - ERROR - Break infinity polling
+2024-05-02 16:54:22,680 - config - ERROR - Не существующий пользователь.
+2024-05-02 16:54:58,693 - TeleBot - ERROR - Infinity polling exception: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2024-05-02 16:54:58,695 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1423, in getresponse
+    response.begin()
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\retry.py", line 470, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 537, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 466, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1423, in getresponse
+    response.begin()
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1205, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 675, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 647, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 327, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 161, in _make_request
+    result = _get_req_session().request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+2024-05-02 18:50:14,987 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924589&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B7BC3546B0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2024-05-02 18:50:14,990 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000002B7BC3546B0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924589&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B7BC3546B0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1205, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 675, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 647, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 327, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 161, in _make_request
+    result = _get_req_session().request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924589&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B7BC3546B0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2024-05-02 18:50:18,009 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924589&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B7BC3556A0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2024-05-02 18:50:18,011 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000002B7BC3556A0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924589&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B7BC3556A0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1205, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 675, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 647, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 327, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 161, in _make_request
+    result = _get_req_session().request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924589&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B7BC3556A0>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2024-05-02 18:50:21,096 - TeleBot - ERROR - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924589&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B7BBE76060>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2024-05-02 18:50:21,098 - TeleBot - ERROR - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 491, in _make_request
+    raise new_e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 467, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 1099, in _validate_conn
+    conn.connect()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 616, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x000002B7BBE76060>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\urllib3\util\retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924589&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B7BBE76060>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1081, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1169, in polling
+    self.__threaded_polling(non_stop=non_stop, interval=interval, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1244, in __threaded_polling
+    raise e
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 1205, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 111, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\util.py", line 93, in run
+    task(*args, **kwargs)
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 675, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\__init__.py", line 647, in get_updates
+    json_updates = apihelper.get_updates(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 327, in get_updates
+    return _make_request(token, method_url, params=payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\telebot\apihelper.py", line 161, in _make_request
+    result = _get_req_session().request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PC\Desktop\pythonProject\Project11\.venv\Lib\site-packages\requests\adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot6808640258:AAGUcVSRqPciK6qeM30saCt-6jquSDP4gWI/getUpdates?offset=56924589&timeout=20 (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002B7BBE76060>: Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2024-05-02 21:32:16,696 - TeleBot - ERROR - Infinity polling: polling exited
+2024-05-02 21:32:16,696 - TeleBot - ERROR - Break infinity polling

@@ -8,3 +8,4 @@ logger = logging.getLogger(__name__)
 DB_NAME = 'sqlite'
 TABLE_NAME = 'users'
 ASSISTANT_TEXT = 'Давай пообщаемся: '
+SYSTEM_FOR_GPT = 'answer very short'
