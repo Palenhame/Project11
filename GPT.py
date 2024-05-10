@@ -22,6 +22,7 @@ class GPT:
         self.assistant = assistant
         self.model_name = model_name
         self.URL = url
+        self.status_code = 200
 
     def question(self, system: str, user: str, max_tokens: int,
                  assistant: str = '') -> Answer | Error:
@@ -52,7 +53,8 @@ class GPT:
                 error_msg = f"Ошибка: {error}"
                 logger.error(error_msg)
                 return error_msg
-            if resp.status_code == 200 and 'choices' in resp.json():
+            self.status_code = resp.status_code
+            if self.status_code == 200 and 'choices' in resp.json():
                 result = resp.json()['choices'][0]['message']['content']
                 if result == "":
                     return "Объяснение закончено"
@@ -61,7 +63,7 @@ class GPT:
                 print(f'"{self.answer}"')
                 return result
 
-            error_msg = f'Статус код: {resp.status_code}'
+            error_msg = f'Статус код: {self.status_code}'
             logger.error(error_msg)
             return 'Не удалось получить ответ от нейросети. ' + error_msg
 
@@ -162,3 +164,4 @@ class GPT:
 if __name__ == "__main__":
     gpt = GPT()
     print(gpt.question('hi', 'hi', 100))
+    print(gpt.status_code)

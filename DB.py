@@ -162,6 +162,18 @@ class DB:
         self._logger(self.non_existing_user)
         raise NonExistingUser(self.non_existing_user)
 
+    def delete_user_by_id(self, id: int) -> None | NonExistingUser:
+        if self._is_id_in_db(id):
+            sql_query = f'''
+                            DELETE
+                            FROM {self.table_name}
+                            WHERE id = {id}
+                            '''
+            self.__connect_to_db(sql_query)
+            return
+        self._logger(self.non_existing_user)
+        raise NonExistingUser(self.non_existing_user)
+
     def _user_in_db(self, user_id: int) -> bool:
         sql_query = f'''
             SELECT user_id
@@ -180,6 +192,15 @@ class DB:
         else:
             new_id = 1
         return new_id
+
+    @staticmethod
+    def return_data_from_db(data: list[Answer], string: str) -> Answer | None:
+        user_data = Answer(0)
+        for i in data:
+            if i.role == string:
+                user_data = i
+                break
+        return user_data
 
     def make_new_user(self, user_id: int, roles: str) -> None:
         new_id = self._last_user_id()
