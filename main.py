@@ -18,13 +18,6 @@ gpt = GPT(100, 100,
 bot = TeleBot(token=token)
 spkit = SpeechKit(folder_id, voice='alena')
 
-iam_token = ("t1.9euelZqdxp6UnYuVkMjPmcydj5PNjO3rnpWanJCVjYzKjpKdlczHjMrJip"
-             "fl8_cKAwJO-e8SNFVT_t3z90oxf0357xI0VVP-zef1656Vmo2dy8"
-             "-QjI2Jj8rIipyYjcea7_zF656Vmo2dy8-QjI2Jj8rIipyYjceaveu"
-             "elZqMz5qOzZSSx5yWnpOJnpzGirXehpzRnJCSj4qLmtGLmdKckJKPi"
-             "oua0pKai56bnoue0oye.Z4J1HtUKq7VejkgJf92wnRdS72-HmfMmQYZ"
-             "o32kM43LPbuTdNfTVhKnYh1Pibxw_UDW-psw6CSWXHPhKp2GlDw")
-
 
 def _create_new_iam_token():
     """
@@ -35,7 +28,8 @@ def _create_new_iam_token():
     headers = {'Metadata-Flavor': 'Google'}
 
     try:
-        response = requests.get(url, headers=headers)
+        # response = requests.get(url, headers=headers)
+        pass
 
     except Exception as e:
         print("Не удалось выполнить запрос:", e)
@@ -43,18 +37,21 @@ def _create_new_iam_token():
         raise ConnectionError
 
     else:
-        if response.status_code == 200:
+        # if response.status_code == 200:
+        if True:
             token_data = {
-                "access_token": response.json().get("access_token"),
-                "expires_at": response.json().get("expires_in") + time.time()
+                # "access_token": response.json().get("access_token"),
+                # "expires_at": response.json().get("expires_in") + time.time()
+                "access_token": '11111',
+                "expires_in": 40474
             }
             try:
                 db.delete_user(111)
             except NonExistingUser:
                 pass
             db.make_new_user(111, 'token')
-            db.update_data(111, 'content', token_data['access_token'])
-            db.update_data(111, 'extra', token_data['expires_in'])
+            db.update_data(3, 'message', token_data['access_token'])
+            db.update_data(3, 'gpt_tokens', token_data['expires_in'])
 
         else:
             print("Ошибка при получении ответа:", response.status_code)
@@ -70,12 +67,13 @@ def get_iam_token() -> str:
     except NonExistingUser:
         try:
             _create_new_iam_token()
-            return db.select_data(111)[0].content
+            return db.select_data(111)[0].message
         except ConnectionError:
             raise ConnectionError
 
-    if not iam_token.content or iam_token.exstra <= time.time():
+    if not iam_token.message or iam_token.gpt_tokens <= time.time():
         _create_new_iam_token()
         iam_token = db.select_data(111)[0]
 
-    return iam_token.content
+    return iam_token.message
+
