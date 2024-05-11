@@ -1,6 +1,5 @@
-from main import gpt, db, bot, spkit, iam_token
-from DB import Answer
-from error import NonExistingUser, TooLongTask
+from main import gpt, db, bot, spkit, get_iam_token, folder_id
+from error import NonExistingUser
 from config import SYSTEM_FOR_GPT, GPT_TOKENS
 from validators import is_user_have_gpt_tokens, is_stt_block_limit, is_tts_symbol_limit
 
@@ -11,15 +10,6 @@ IS_SEND_GPT_STATUS_CODE = False
 def start(message):
     user_id = message.chat.id
     bot.send_message(user_id, 'Привет. Я бот который поможет скоротать тебе время. Нужна будет помощь пиши /help')
-
-
-@bot.message_handler(commands=['help'])
-def help(message):
-    user_id = message.chat.id
-    bot.send_message(user_id, 'Долг зовёт Крепыш вперёд.'
-                              'Сейчас я тебе всё объясню.'
-                              'При отпраке')
-
 
 
 @bot.message_handler(commands=['status_code'])
@@ -86,8 +76,8 @@ def text_to_speech(message, new_user: bool = True, own: bool = True, system_text
         data = db.return_data_from_db(db.select_data(user_id), 'user')
         db.update_data(data.id, 'symbols', tts_val[1])
         if own:
-            bot.send_message(user_id, text)
-        return 11111
+            bot.send_audio(user_id, spkit.text_to_speech(text, get_iam_token()))
+        return spkit.text_to_speech(text, get_iam_token())
     else:
         if own:
             bot.send_message(user_id, tts_val[1])
@@ -100,6 +90,9 @@ def speach_to_text(message, new_user: bool = True, own: bool = True):
         bot.send_message(user_id, "Это не голосовое сообщение.")
         return
 
+    file_id = message.voice.file_id
+    file_info = bot.get_file(file_id)
+    file = bot.download_file(file_info.file_path)
     stt_val = validate_stt_message(user_id, message.voice.duration)
     if stt_val[0] is True:
         if new_user:
@@ -108,9 +101,9 @@ def speach_to_text(message, new_user: bool = True, own: bool = True):
         data = db.return_data_from_db(db.select_data(user_id), 'user')
         db.update_data(data.id, 'blocks', stt_val[1])
         if own:
-            bot.send_message(user_id, 'all ok')
+            bot.send_message(user_id, spkit.speech_to_text(get_iam_token(), file))
         else:
-            return 'all ok', data.id
+            return spkit.speech_to_text(get_iam_token(), file), data.id
     else:
         if own:
             bot.send_message(user_id, stt_val[1])
@@ -130,13 +123,15 @@ def audio(message):
     except IndexError:
         bot.send_message(user_id, stt_val)
         return
+    except TypeError:
+        bot.register_next_step_handler(message, audio)
     answer = ask_gpt(stt_val[1], stt_val[0])
     if answer != 'no tokens':
         tts_val = text_to_speech(message, False, False, answer)
         if isinstance(tts_val, str):
             bot.send_message(user_id, tts_val)
             return
-        bot.send_message(user_id, tts_val)
+        bot.send_audio(user_id, tts_val)
         if IS_SEND_GPT_STATUS_CODE:
             bot.send_message(user_id, f'Статус код: {gpt.status_code}')
         bot.register_next_step_handler(message, audio)
@@ -172,8 +167,9 @@ def assistant_into_db(text: str, id_user: int):
 
 def _ask_gpt(text: str, id_user: int, max_tokens: int):
     assistant = assistant_content(id_user)
-    answer = gpt.question(SYSTEM_FOR_GPT, text,
-                          20 if max_tokens > 20 else max_tokens, assistant)
+    answer = gpt.question_to_yagpt(SYSTEM_FOR_GPT, text,
+                                   20 if max_tokens > 20 else max_tokens,
+                                   get_iam_token(), assistant)
     return answer
 
 
@@ -199,7 +195,7 @@ def ask_gpt(id_user, text):
     have, tokens = validate_gpt_tokens(id_user - 2, is_user_have_gpt_tokens)
     print(f'have: {have}, tokens: {tokens}')
     if have:
-        text_into_db(text, 100, id_user)
+        text_into_db(text, gpt.count_tokens(text, folder_id, get_iam_token()), id_user)
 
         answer = _ask_gpt(text, id_user - 1, tokens)
 

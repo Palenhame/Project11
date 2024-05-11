@@ -58,3 +58,5 @@ class SpeechKit:
             return response.content
         logger.error(f'Сетевая ошибка: {response.status_code}')
         raise ConnectionError(f'Сетевая ошибка: {response.status_code}')
+
+
