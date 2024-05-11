@@ -28,7 +28,7 @@ def _create_new_iam_token():
     headers = {'Metadata-Flavor': 'Google'}
 
     try:
-        # response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers)
         pass
 
     except Exception as e:
@@ -37,13 +37,10 @@ def _create_new_iam_token():
         raise ConnectionError
 
     else:
-        # if response.status_code == 200:
-        if True:
+        if response.status_code == 200:
             token_data = {
-                # "access_token": response.json().get("access_token"),
-                # "expires_at": response.json().get("expires_in") + time.time()
-                "access_token": '11111',
-                "expires_in": 40474
+                "access_token": response.json().get("access_token"),
+                "expires_at": response.json().get("expires_in") + time.time()
             }
             try:
                 db.delete_user(111)
