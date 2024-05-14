@@ -47,8 +47,9 @@ def _create_new_iam_token():
             except NonExistingUser:
                 pass
             db.make_new_user(111, 'token')
-            db.update_data(3, 'message', token_data['access_token'])
-            db.update_data(3, 'gpt_tokens', token_data['expires_in'])
+            id = db.select_data(111)[0].id
+            db.update_data(id, 'message', token_data['access_token'])
+            db.update_data(id, 'gpt_tokens', token_data['expires_in'])
 
         else:
             print("Ошибка при получении ответа:", response.status_code)
