@@ -35,7 +35,6 @@ class GPT:
                 "temperature": 1,
                 "max_tokens": self.max_tokens_in_answer if self.max_tokens_in_answer < max_tokens else max_tokens
             }
-            print(f'MAX_TOKENS: {data['max_tokens']}')
             if assistant:
                 data['messages'].append({
                     "role": "assistant",
